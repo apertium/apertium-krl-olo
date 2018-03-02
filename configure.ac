@@ -18,7 +18,7 @@ AM_INIT_AUTOMAKE([-Wall -Werror -Wno-portability foreign])
 AC_PROG_LN_S
 AC_PROG_AWK
 
-m4_dekrle([required_apertium_version], [3.3.0])
+m4_define([required_apertium_version], [3.3.0])
 PKG_CHECK_MODULES(APERTIUM,   apertium >= required_apertium_version, [], [PKG_CHECK_MODULES(APERTIUM,   apertium-3.2 >= required_apertium_version)])
 
 
@@ -79,5 +79,5 @@ AP_CHECK_LING([2], [apertium-olo])
 
 AP_MKINCLUDE
 
-AC_OUTPUT([Makefile apertium-krl-olo.pc t/config.sh])
+AC_OUTPUT([Makefile apertium-krl-olo.pc ])
 
