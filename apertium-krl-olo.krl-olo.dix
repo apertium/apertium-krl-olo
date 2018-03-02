@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dictionary>
+  <!-- {{{ Dekrle the alphabet below. -->
+   <alphabet>
+     aAbBcCdDefFgGhHiIjJkKlLmMnNoOPqQrRsStTuUvVwWxXyYzZ
+     ßšŠüÜžŽåÅäÄöÖ
+     -
+   </alphabet>
+
+  <sdefs>
+    <!-- }}}
+         {{{ Dekrle symbol dekrlitions within <sdef> here. -->
+
+                 <!-- c="UPOS" -->
+    <sdef n="n"       c="NOUN"/>
+    <sdef n="ij"      c="INTJ"/>
+    <sdef n="punct"   c="PUNCT"/>
+    <sdef n="sym"     c="SYM "/>
+    <sdef n="adj"     c="ADJ"/>
+    <sdef n="cnjcoo"  c="CONJ"/>
+    <sdef n="cnjadv"  c="SCONJ"/>
+    <sdef n="cnjsub"  c="SCONJ"/>
+    <sdef n="vbser"   c="VERB"/>
+    <sdef n="vbhaver" c="VERB"/>
+    <sdef n="vbmod"   c="AUX"/>
+    <sdef n="num"     c="NUM"/>
+    <sdef n="vaux"    c="AUX"/>
+    <sdef n="prn"     c="PRN"/>
+    <sdef n="adv"     c="ADV"/>
+    <sdef n="preadv"  c="ADV"/>
+    <sdef n="rel"     c="PRN"/>
+    <sdef n="pr"      c="ADP"/>
+    <sdef n="post"    c="ADP"/>
+    <sdef n="vblex"   c="VERB"/>
+    <sdef n="np"      c="PROPN"/>
+    <sdef n="sent"    c="PUNCT"/>
+    <sdef n="lquot"   c="PUNCT"/>
+    <sdef n="rquot"   c="PUNCT"/>
+    <sdef n="rpar"   c="PUNCT"/>
+    <sdef n="lpar"   c="PUNCT"/>
+    <sdef n="cm"      c="PUNCT"/>
+    <sdef n="guio"      c="PUNCT"/>
+    <sdef n="apos"      c="PUNCT"/>
+    <sdef n="part"    c="PART"/>
+    <sdef n="ito"     c="PART"/>
+    <sdef n="pprep"      c="ADP??"/>
+    <sdef n="enc"      c="PART"/>
+
+    <sdef n="atp"      c="NOUN"/>
+    <sdef n="lower"      c="NOUN"/>
+    <sdef n="cmp"      c="--comp"/>
+    <sdef n="cmp-split"      c="--comp -"/>
+    <sdef n="compound-only-L"      c="--comp"/>
+                 <!-- c="Ufeat=value" -->
+    <sdef n="sg"    c="Singular"/>
+    <sdef n="pl"    c="Plural"/>
+    <sdef n="sp"    c="Singular AND plural"/>
+    <sdef n="nn"    c="N?"/>
+    <sdef n="nt"    c="Neuter"/>
+    <sdef n="mf"    c="Both"/>
+    <sdef n="m"     c="Man"/>
+    <sdef n="f"     c="Foman"/>
+    <sdef n="mfn"    c="Both and neither"/>
+    <sdef n="p1"     c="Separate 1st person"/>
+    <sdef n="p2"     c="Separate 2nd person"/>
+    <sdef n="p3"     c="Separate 3rd person"/>
+    <sdef n="sint"  c="inflecting"/>
+    <sdef n="pos"  c="positive"/>
+    <sdef n="dem"  c="demonstratif"/>
+    <sdef n="det"  c="determiner"/>
+    <sdef n="def"  c="dekrliteerminer"/>
+    <sdef n="ind"  c="indekrliteerminer"/>
+    <sdef n="dat"  c="dative"/>
+    <sdef n="acc"  c="accusative"/>
+    <sdef n="gen"  c="genetive"/>
+    <sdef n="pers"  c="personal"/>
+    <sdef n="ref"  c="reflexive"/>
+    <sdef n="neg"  c="negation verb"/>
+    <sdef n="itg"  c="interrogative"/>
+    <sdef n="qst"  c="question clitic"/>
+    <sdef n="card"  c="question clitic"/>
+    <sdef n="nocard"  c="question clitic"/>
+    <sdef n="ord"  c="question clitic"/>
+    <sdef n="abbr"  c="question clitic"/>
+    <sdef n="acr"  c="question clitic"/>
+    <sdef n="qnt"  c="question clitic"/>
+    <sdef n="iobj"  c="question clitic"/>
+
+    <sdef n="ant"   c="-- antropomorphic"/>
+    <sdef n="top"   c="-- topological"/>
+    <sdef n="cog"   c="-- family name"/>
+    <sdef n="org"   c="-- organisation name"/>
+    <sdef n="al"   c="-- al name"/>
+
+    <sdef n="ess" c="essive" />
+    <sdef n="ine" c="inessive" />
+    <sdef n="nom" c="nominative" />
+    <sdef n="ade" c="nominative" />
+    <sdef n="par" c="partitive" />
+    <sdef n="tra" c="partitive" />
+    <sdef n="ill" c="partitive" />
+    <sdef n="pxsp3" c="partitive" />
+    <sdef n="actv" c="partitive" />
+
+    <sdef n="comp" c="partitive" />
+    <sdef n="sup" c="partitive" />
+
+    <sdef n="use_nonstd" c="partitive" />
+    <sdef n="use_blacklist" c="partitive" />
+
+  </sdefs>
+
+  <!-- }}}
+  {{{ paradigms -->
+
+  <pardefs>
+    <pardef n="anyg" c="when developing ignore genders until ambibuity">
+      <e><p><l/><r><s n="f"/></r></p></e>
+      <e><p><l/><r><s n="m"/></r></p></e>
+      <e><p><l/><r><s n="mf"/></r></p></e>
+      <e><p><l/><r><s n="mfn"/></r></p></e>
+      <e><p><l/><r><s n="nt"/></r></p></e>
+    </pardef>
+    <pardef n="anynp" c="just ignore np semantic non-sense">
+      <e><i><s n="al"/></i><par n="anyg"/></e>
+      <e><i><s n="ant"/></i></e>
+      <e><i><s n="ant"/><s n="f"/></i></e>
+      <e><i><s n="ant"/><s n="m"/></i></e>
+      <e><i><s n="ant"/></i><par n="anyg"/></e>
+      <e><i><s n="cog"/></i></e>
+      <e><i><s n="cog"/></i><par n="anyg"/></e>
+      <e><i><s n="org"/></i><par n="anyg"/></e>
+      <e><i><s n="top"/></i></e>
+      <e><i><s n="top"/></i><par n="anyg"/></e>
+      <e><p><l><s n="top"/></l><r><s n="ant"/></r></p><par n="anyg"/></e>
+      <e><p><l><s n="ant"/></l><r><s n="top"/></r></p><par n="anyg"/></e>
+      <e><p><l/><r><s n="al"/></r></p><par n="anyg"/></e>
+      <e><p><l/><r><s n="ant"/></r></p><par n="anyg"/></e>
+      <e><p><l/><r><s n="cog"/></r></p><par n="anyg"/></e>
+      <e><p><l/><r><s n="org"/></r></p><par n="anyg"/></e>
+      <e><p><l/><r><s n="top"/></r></p><par n="anyg"/></e>
+    </pardef>
+  </pardefs>
+  <!-- }}} -->
+
+  <section id="main" type="standard">
+
+    <!-- {{{ NOUNS NOUNS NOUNS
+      -->
+
+
+    <e><p><l>talo<s n="n"/></l><r>talo<s n="n"/></r></p></e>
+
+
+<!--
+    }}}
+    {{{ ADVERBS  ADVERBS ADVERBS
+    }}}
+    {{{ VERBS AUXILIARIES VERBS
+    }}}
+    {{{ ADJECTIVES ADJECTIVES ADJECTIVES
+    }}}
+    {{{ CONJUNCTIONS SUBORDINATES CO-ORDINATES
+    }}}
+    {{{ PRONOUNS PRONOUNS PRONOUNS
+    }}}
+    {{{ DETERMINERS ARTICLES DETERMINERS
+    }}}
+    {{{ ADPOSITIONS PREPOSITIONS POSTPOSITIONS
+    }}}
+    {{{ NUMERALS ORDINALS CARDINALS
+    {{{ digit loops -->
+
+
+    <!-- any digit series -->
+    <e c="basic digit series"><re>[0-9][0-9]*</re><p><l><s n="num"/></l><r><s n="num"/></r></p></e>
+
+    <!-- }}}
+    }}}
+    {{{ PROPERS NOUNS PROPRES
+    }}}
+    {{{ INTERJECTIONS !!!¡¡¡ INTER JCETIONS -->
+
+    <e><p><l>au<s n="ij"/></l><r>au<s n="ij"/></r></p></e>
+
+    <!-- }}}
+    {{{ Punctuatkion and stuff
+    {{{ puncts -->
+
+
+    <e r="LR"><p><l>..<s n="punct"/></l><r>.<s n="punct"/></r></p></e>
+    <e r="RL"><p><l>.<s n="punct"/></l><r>..<s n="punct"/></r></p></e>
+
+    <e><p><l>.<s n="punct"/></l><r>.<s n="punct"/></r></p></e>
+    <e><p><l>?<s n="punct"/></l><r>?<s n="punct"/></r></p></e>
+    <e><p><l>!<s n="punct"/></l><r>!<s n="punct"/></r></p></e>
+    <e><p><l>,<s n="punct"/></l><r>,<s n="punct"/></r></p></e>
+    <e><p><l>"<s n="punct"/></l><r>"<s n="punct"/></r></p></e>
+    <e><p><l>'<s n="punct"/></l><r>'<s n="punct"/></r></p></e>
+    <e><p><l>»<s n="punct"/></l><r>»<s n="punct"/></r></p></e>
+    <e><p><l>»<s n="punct"/></l><r>«<s n="punct"/></r></p></e>
+    <e><p><l>”<s n="punct"/></l><r>“<s n="punct"/></r></p></e>
+    <e><p><l>”<s n="punct"/></l><r>„<s n="punct"/></r></p></e>
+    <e><p><l>’<s n="punct"/></l><r>’<s n="punct"/></r></p></e>
+    <e><p><l>’<s n="punct"/></l><r>‘<s n="punct"/></r></p></e>
+    <e><p><l>:<s n="punct"/></l><r>:<s n="punct"/></r></p></e>
+    <e><p><l>;<s n="punct"/></l><r>;<s n="punct"/></r></p></e>
+    <e><p><l>]<s n="punct"/></l><r>]<s n="punct"/></r></p></e>
+    <e><p><l>[<s n="punct"/></l><r>[<s n="punct"/></r></p></e>
+    <e><p><l>}<s n="punct"/></l><r>}<s n="punct"/></r></p></e>
+    <e><p><l>{<s n="punct"/></l><r>{<s n="punct"/></r></p></e>
+    <e><p><l>)<s n="punct"/></l><r>)<s n="punct"/></r></p></e>
+    <e><p><l>(<s n="punct"/></l><r>(<s n="punct"/></r></p></e>
+    <e><p><l>-<s n="punct"/></l><r>-<s n="punct"/></r></p></e>
+    <e><p><l>–<s n="punct"/></l><r>–<s n="punct"/></r></p></e>
+
+    <e><p><l>%<s n="n"/></l><r>%<s n="punct"/></r></p></e>
+
+    <!--
+         }}}
+    }}}
+  ito -->
+
+
+
+
+  </section>
+</dictionary>
+<!-- vim: set foldmethod=marker: -->

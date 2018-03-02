@@ -1,0 +1,27 @@
+<rules>
+
+  <!-- hand-written rules -->
+
+  <!-- starch is rarer than strength -->
+  <rule>
+    <match lemma="Stärke" tags="n.*">
+      <select lemma="vahvuus" tags="n.*"/>
+    </match>
+  </rule>
+
+  <!-- Stab (Stff both meanings) = keppi, henkilöstö -->
+  <rule>
+    <match lemma="Stab" tags="n.*">
+      <select lemma="henkilöstö" tags="n.*"/>
+    </match>
+    <match lemma="chef" tags="n.*"/>
+  </rule>
+  <rule>
+    <match lemma="Stab" tags="n.*">
+      <select lemma="henkilöstö" tags="n.*"/>
+    </match>
+    <match lemma="chekrl" tags="n.*"/>
+  </rule>
+</rules>
+
+<!-- vim: set ft=xml: -->

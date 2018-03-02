@@ -1,0 +1,586 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modes>
+
+  <!-- krl → olo -->
+
+  <mode name="krl-olo" install="yes">
+    <pipeline>
+      <program name="hfst-proc -e -w">
+        <file name="krl-olo.automorf.hfst"/>
+      </program>
+
+
+      <program name="cg-proc -1 -n -w">
+        <file name="krl-olo.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="hfst-proc -b">
+        <file name="krl-olo.autobil.bin"/>
+      </program>
+      <program name="lrx-proc -m">
+        <file name="krl-olo.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-krl-olo.krl-olo.t1x"/>
+        <file name="krl-olo.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-krl-olo.krl-olo.t2x"/>
+        <file name="krl-olo.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-krl-olo.krl-olo.t3x"/>
+        <file name="krl-olo.t3x.bin"/>
+      </program>
+      <program name="hfst-proc $1">
+        <file name="krl-olo.autogen.hfst"/>
+      </program>
+
+    </pipeline>
+  </mode>
+
+  <mode name="krl-olo-debug" install="no">
+    <pipeline>
+      <program name="hfst-proc -e -w">
+        <file name="krl-olo.automorf.hfst"/>
+      </program>
+
+
+      <program name="cg-proc -1 -n -w">
+        <file name="krl-olo.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="hfst-proc -b">
+        <file name="krl-olo.autobil.bin"/>
+      </program>
+      <program name="lrx-proc -m">
+        <file name="krl-olo.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-krl-olo.krl-olo.t1x"/>
+        <file name="krl-olo.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-krl-olo.krl-olo.t2x"/>
+        <file name="krl-olo.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-krl-olo.krl-olo.t3x"/>
+        <file name="krl-olo.t3x.bin"/>
+      </program>
+      <program name="hfst-proc -d">
+        <file name="krl-olo.autogen.hfst"/>
+      </program>
+
+    </pipeline>
+  </mode>
+
+  <mode name="krl-olo-dgen" install="no">
+    <pipeline>
+      <program name="hfst-proc">
+        <file name="krl-olo.automorf.hfst"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="krl-olo.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="hfst-proc -b">
+        <file name="krl-olo.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-krl-olo.krl-olo.t1x"/>
+        <file name="krl-olo.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-krl-olo.krl-olo.t2x"/>
+        <file name="krl-olo.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-krl-olo.krl-olo.t3x"/>
+        <file name="krl-olo.t3x.bin"/>
+      </program>
+      <program name="hfst-proc -d">
+        <file name="krl-olo.autogen.hfst"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="krl-olo-morph" install="no">
+    <pipeline>
+      <program name="hfst-proc">
+        <file name="krl-olo.automorf.hfst"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="krl-olo-disam" install="no">
+    <pipeline>
+      <program name="hfst-proc">
+        <file name="krl-olo.automorf.hfst"/>
+      </program>
+      <program name="cg-conv -a"/>
+      <program name="vislcg3 --trace --grammar">
+        <file name="krl-olo.rlx.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="krl-olo-tagger" install="no">
+    <pipeline>
+      <program name="hfst-proc">
+        <file name="krl-olo.automorf.hfst"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="krl-olo.rlx.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="krl-olo-pretransfer" install="no">
+    <pipeline>
+      <program name="hfst-proc">
+        <file name="krl-olo.automorf.hfst"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="krl-olo.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+    </pipeline>
+  </mode>
+
+  <mode name="krl-olo-biltrans" install="no">
+    <pipeline>
+      <program name="hfst-proc">
+        <file name="krl-olo.automorf.hfst"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="krl-olo.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="hfst-proc -b">
+        <file name="krl-olo.autobil.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="krl-olo-lex" install="no">
+    <pipeline>
+      <program name="hfst-proc">
+        <file name="krl-olo.automorf.hfst"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="krl-olo.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="hfst-proc -b">
+        <file name="krl-olo.autobil.bin"/>
+      </program>
+      <program name="lrx-proc -t">
+        <file name="krl-olo.autolex.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="krl-olo-transfer" install="no">
+    <pipeline>
+      <program name="hfst-proc">
+        <file name="krl-olo.automorf.hfst"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="krl-olo.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="hfst-proc -b">
+        <file name="krl-olo.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="krl-olo.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b -c">
+        <file name="apertium-krl-olo.krl-olo.t1x"/>
+        <file name="krl-olo.t1x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="krl-olo-interchunk" install="no">
+    <pipeline>
+      <program name="hfst-proc">
+        <file name="krl-olo.automorf.hfst"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="krl-olo.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="hfst-proc -b">
+        <file name="krl-olo.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="krl-olo.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-krl-olo.krl-olo.t1x"/>
+        <file name="krl-olo.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk -t">
+        <file name="apertium-krl-olo.krl-olo.t2x"/>
+        <file name="krl-olo.t2x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="krl-olo-postchunk" install="no">
+    <pipeline>
+      <program name="hfst-proc">
+        <file name="krl-olo.automorf.hfst"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="krl-olo.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="hfst-proc -b">
+        <file name="krl-olo.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="krl-olo.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-krl-olo.krl-olo.t1x"/>
+        <file name="krl-olo.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-krl-olo.krl-olo.t2x"/>
+        <file name="krl-olo.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-krl-olo.krl-olo.t3x"/>
+        <file name="krl-olo.t3x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <!-- olo → krl -->
+
+  <mode name="olo-krl" install="yes">
+    <pipeline>
+      <program name="hfst-proc -w -e">
+        <file name="olo-krl.automorf.hfst"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="olo-krl.prep.cg3.bin"/>
+      </program>
+      <program name="cg-proc -w1n">
+        <file name="olo-krl.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="hfst-proc -b">
+        <file name="olo-krl.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="olo-krl.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-krl-olo.olo-krl.t1x"/>
+        <file name="olo-krl.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-krl-olo.olo-krl.t2x"/>
+        <file name="olo-krl.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-krl-olo.olo-krl.t3x"/>
+        <file name="olo-krl.t3x.bin"/>
+      </program>
+      <program name="hfst-proc -N 1 $1">
+        <file name="olo-krl.autogen.hfst"/>
+      </program>
+
+    </pipeline>
+  </mode>
+
+  <mode name="olo-krl-debug" install="no">
+    <pipeline>
+      <program name="hfst-proc -w -e">
+        <file name="olo-krl.automorf.bin"/>
+      </program>
+
+      <program name="cg-proc -w">
+        <file name="olo-krl.prep.cg3.bin"/>
+      </program>
+
+      <program name="cg-proc -w1n">
+        <file name="olo-krl.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="hfst-proc -b">
+        <file name="olo-krl.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-krl-olo.olo-krl.t1x"/>
+        <file name="olo-krl.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-krl-olo.olo-krl.t2x"/>
+        <file name="olo-krl.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-krl-olo.olo-krl.t3x"/>
+        <file name="olo-krl.t3x.bin"/>
+      </program>
+      <program name="hfst-proc -d">
+        <file name="olo-krl.autogen.hfst"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="olo-krl-dgen" install="no">
+    <pipeline>
+      <program name="hfst-proc -w -e">
+        <file name="olo-krl.automorf.hfst"/>
+      </program>
+
+
+      <program name="cg-proc -w1n">
+        <file name="olo-krl.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="hfst-proc -b">
+        <file name="olo-krl.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-krl-olo.olo-krl.t1x"/>
+        <file name="olo-krl.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-krl-olo.olo-krl.t2x"/>
+        <file name="olo-krl.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-krl-olo.olo-krl.t3x"/>
+        <file name="olo-krl.t3x.bin"/>
+      </program>
+      <program name="hfst-proc -d">
+        <file name="olo-krl.autogen.hfst"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="olo-krl-morph" install="no">
+    <pipeline>
+      <program name="hfst-proc -w -e">
+        <file name="olo-krl.automorf.hfst"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="olo-krl-disam" install="no">
+    <pipeline>
+      <program name="hfst-proc -w -e">
+        <file name="olo-krl.automorf.hfst"/>
+      </program>
+      <program name="cg-conv -a"/>
+      <program name="vislcg3 --trace --grammar">
+        <file name="olo-krl.rlx.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="olo-krl-tagger" install="no">
+    <pipeline>
+      <program name="hfst-proc -w -e">
+        <file name="olo-krl.automorf.hfst"/>
+      </program>
+
+
+      <program name="cg-proc -w1n">
+        <file name="olo-krl.rlx.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="olo-krl-pretransfer" install="no">
+    <pipeline>
+      <program name="hfst-proc -w -e">
+        <file name="olo-krl.automorf.hfst"/>
+      </program>
+
+
+      <program name="cg-proc -w1n">
+        <file name="olo-krl.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+    </pipeline>
+  </mode>
+
+  <mode name="olo-krl-biltrans" install="no">
+    <pipeline>
+      <program name="hfst-proc -w -e">
+        <file name="olo-krl.automorf.hfst"/>
+      </program>
+
+
+      <program name="cg-proc -w1n">
+        <file name="olo-krl.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="hfst-proc -b">
+        <file name="olo-krl.autobil.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="olo-krl-lex" install="no">
+    <pipeline>
+      <program name="hfst-proc -w -e">
+        <file name="olo-krl.automorf.hfst"/>
+      </program>
+
+
+      <program name="cg-proc -w1n">
+        <file name="olo-krl.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="hfst-proc -b">
+        <file name="olo-krl.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="olo-krl.autolex.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="olo-krl-transfer" install="no">
+    <pipeline>
+      <program name="hfst-proc -w -e">
+        <file name="olo-krl.automorf.hfst"/>
+      </program>
+
+
+      <program name="cg-proc -w1n">
+        <file name="olo-krl.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="hfst-proc -b">
+        <file name="olo-krl.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-krl-olo.olo-krl.t1x"/>
+        <file name="olo-krl.t1x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="olo-krl-interchunk" install="no">
+    <pipeline>
+      <program name="hfst-proc -w -e">
+        <file name="olo-krl.automorf.hfst"/>
+      </program>
+
+
+      <program name="cg-proc -w1n">
+        <file name="olo-krl.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="hfst-proc -b">
+        <file name="olo-krl.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-krl-olo.olo-krl.t1x"/>
+        <file name="olo-krl.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk -t">
+        <file name="apertium-krl-olo.olo-krl.t2x"/>
+        <file name="olo-krl.t2x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="olo-krl-postchunk" install="no">
+    <pipeline>
+      <program name="hfst-proc -w -e">
+        <file name="olo-krl.automorf.hfst"/>
+      </program>
+
+
+      <program name="cg-proc -w1n">
+        <file name="olo-krl.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="hfst-proc -b">
+        <file name="olo-krl.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-krl-olo.olo-krl.t1x"/>
+        <file name="olo-krl.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-krl-olo.olo-krl.t2x"/>
+        <file name="olo-krl.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-krl-olo.olo-krl.t3x"/>
+        <file name="olo-krl.t3x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <!-- separable test -->
+  <mode name="olo-krl-separate" install="no">
+    <pipeline>
+      <program name="hfst-proc -w -e">
+        <file name="olo-krl.automorf.bin"/>
+      </program>
+
+      <program name="cg-proc -w">
+        <file name="olo-krl.prep.cg3.bin"/>
+      </program>
+
+      <program name="cg-proc -w1n">
+        <file name="olo-krl.rlx.bin"/>
+      </program>
+      <program name="lsx-proc">
+        <file name="olo-krl.autosep.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="hfst-proc -b">
+        <file name="olo-krl.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-krl-olo.olo-krl.t1x"/>
+        <file name="olo-krl.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-krl-olo.olo-krl.t2x"/>
+        <file name="olo-krl.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-krl-olo.olo-krl.t3x"/>
+        <file name="olo-krl.t3x.bin"/>
+      </program>
+      <program name="hfst-proc -d">
+        <file name="olo-krl.autogen.hfst"/>
+      </program>
+    </pipeline>
+  </mode>
+
+
+</modes>
+
