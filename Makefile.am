@@ -206,6 +206,8 @@ clean-local:
 ## Test
 ###############################################################################
 
+check: test
+
 test: all
 	echo "talo" | apertium -d . krl-olo | tee .test-mt
 	@echo "talo" > .test-ref
