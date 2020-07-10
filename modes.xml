@@ -284,9 +284,6 @@
       </program>
 
 
-      <program name="cg-proc -w">
-        <file name="olo-krl.prep.cg3.bin"/>
-      </program>
       <program name="cg-proc -w1n">
         <file name="olo-krl.rlx.bin"/>
       </program>
@@ -322,9 +319,6 @@
         <file name="olo-krl.automorf.bin"/>
       </program>
 
-      <program name="cg-proc -w">
-        <file name="olo-krl.prep.cg3.bin"/>
-      </program>
 
       <program name="cg-proc -w1n">
         <file name="olo-krl.rlx.bin"/>
@@ -549,9 +543,6 @@
         <file name="olo-krl.automorf.bin"/>
       </program>
 
-      <program name="cg-proc -w">
-        <file name="olo-krl.prep.cg3.bin"/>
-      </program>
 
       <program name="cg-proc -w1n">
         <file name="olo-krl.rlx.bin"/>

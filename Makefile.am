@@ -86,8 +86,6 @@ $(PREFIX1).rlx.bin: $(AP_SRC1)/apertium-$(LANG1).$(LANG1).rlx
 $(PREFIX2).rlx.bin: $(AP_SRC2)/apertium-$(LANG2).$(LANG2).rlx
 	cg-comp $< $@
 
-$(PREFIX2).prep.cg3.bin: apertium-$(LANG1)-$(LANG2).$(LANG2)-$(LANG1).prep.cg3
-	cg-comp $< $@
 
 ###############################################################################
 ## Bilingual dictionaries
