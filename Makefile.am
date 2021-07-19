@@ -207,13 +207,7 @@ clean-local:
 check: test
 
 test: all
-	echo "talo" | apertium -d . krl-olo | tee .test-mt
-	@echo "talo" > .test-ref
-	@diff .test-ref .test-mt
-	echo "talo" | apertium -d . olo-krl | tee .test-mt
-	@echo "talo" > .test-ref
-	@diff .test-ref .test-mt
-	@rm .test-ref .test-mt
+	apertium-regtest test
 
 # Slow but near-complete test of dictionary consistency:
 test-gen-krl-olo: all

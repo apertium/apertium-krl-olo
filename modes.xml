@@ -14,7 +14,7 @@
         <file name="krl-olo.rlx.bin"/>
       </program>
       <program name="apertium-pretransfer"/>
-      <program name="hfst-proc -b">
+      <program name="lt-proc -b">
         <file name="krl-olo.autobil.bin"/>
       </program>
       <program name="lrx-proc -m">
@@ -288,7 +288,7 @@
         <file name="olo-krl.rlx.bin"/>
       </program>
       <program name="apertium-pretransfer"/>
-      <program name="hfst-proc -b">
+      <program name="lt-proc -b">
         <file name="olo-krl.autobil.bin"/>
       </program>
       <program name="lrx-proc">

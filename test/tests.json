@@ -1,0 +1,10 @@
+{
+    "krl-olo": {
+        "input": "krl-olo-input.txt",
+        "mode": "krl-olo"
+    },
+    "olo-krl": {
+        "input": "olo-krl-input.txt",
+        "mode": "olo-krl"
+    }
+}
