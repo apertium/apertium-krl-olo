@@ -2,6 +2,8 @@
 ## Makefile for Karelian--Livvi
 ###############################################################################
 
+SUBDIRS=docs
+
 VERSION=0.0.0
 LANG1=krl
 LANG2=olo
